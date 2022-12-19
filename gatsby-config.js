@@ -7,6 +7,32 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`, `avif`],
+          placeholder: `dominantColor`,
+          quality: 80,
+        },
+      },
+    },
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `SuUkraina.lt`,
+        short_name: `SuUkraina.lt`,
+        start_url: `/`,
+        background_color: `#0F47AF`,
+        theme_color: `#FFD500`,
+        display: `standalone`,
+        icon: `src/images/main-icon.svg`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
         useAutoGen: true,
@@ -138,32 +164,6 @@ module.exports = {
     `gatsby-plugin-preact`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          formats: [`auto`, `webp`, `avif`],
-          placeholder: `dominantColor`,
-          quality: 80,
-        },
-      },
-    },
-    `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `SuUkraina.lt`,
-        short_name: `SuUkraina.lt`,
-        start_url: `/`,
-        background_color: `#0F47AF`,
-        theme_color: `#FFD500`,
-        display: `standalone`,
-        icon: `src/images/main-icon.svg`,
-        icon_options: {
-          purpose: `any maskable`,
-        },
-      },
-    },
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-sitemap`,
